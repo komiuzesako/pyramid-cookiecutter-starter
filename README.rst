@@ -6,7 +6,7 @@ pyramid-cookiecutter-starter
     :target: https://github.com/Pylons/pyramid-cookiecutter-starter/actions?query=branch%3Alatest
     :alt: Latest Branch Status
 
-A Cookiecutter (project template) for creating a Pyramid starter project.
+A Cookiecutter (project template) for creating a Pyramid starter project. Added poetry support and broke a lot of backwards compatibility and generally made a mess of things.
 
 Customizable options upon install include choice of:
 
