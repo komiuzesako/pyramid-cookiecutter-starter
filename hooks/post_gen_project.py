@@ -10,6 +10,7 @@ def main():
     clean_unused_template_settings()
     clean_unused_backend()
     display_actions_message()
+    clean_unused_packaging_config()
 
 
 def clean_unused_template_settings():
@@ -32,6 +33,19 @@ def delete_other_ext(directory, extension):
         if not template_file.endswith(extension):
             os.unlink(os.path.join(directory, template_file))
 
+def clean_unused_packaging_config():
+    """
+     Remove either setup.py or pyproject.toml depending on packaging tool selected
+    """
+    selected_packaging = '{{ cookiecutter.packaging }}'
+    scaffold_directory = os.path.join(
+                 WORKING, '{{cookiecutter.repo_name}}')
+    if selected_packaging == 'setuptools':
+        print('hello')
+        todelete = os.path.join(WORKING, 'pyproject.toml')
+    else:
+        todelete = os.path.join(WORKING, 'setup.py')
+    os.unlink(todelete)
 
 def clean_unused_backend():
     selected_backend = '{{ cookiecutter.backend }}'

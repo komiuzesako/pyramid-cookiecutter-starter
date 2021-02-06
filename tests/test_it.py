@@ -26,6 +26,7 @@ base_files = [
     'README.txt',
     'development.ini',
     'production.ini',
+    'pyproject.toml',
     'pytest.ini',
     'setup.py'
 ]
@@ -59,6 +60,7 @@ sqlalchemy_files = [
     'README.txt',
     'development.ini',
     'production.ini',
+    'pyproject.toml',
     'pytest.ini',
     'setup.py'
 ]
@@ -85,6 +87,7 @@ zodb_files = [
     'README.txt',
     'development.ini',
     'production.ini',
+    'pyproject.toml',
     'pytest.ini',
     'setup.py'
 ]
@@ -106,11 +109,12 @@ def test_base(cookies, venv, capfd, template):
         'project_name': 'Test Project',
         'template_language': template,
         'backend': 'none',
+        'packaging system': 'setuptools',
         'repo_name': 'myapp',
     })
-
+    print(result)
     assert result.exit_code == 0
-
+    print('baked da cookies')
     out, err = capfd.readouterr()
 
     if WIN:

@@ -3,7 +3,7 @@
     "repo_name": "{{cookiecutter.project_name.lower().strip().replace(' ', '_').replace(':', '_').replace('-', '_').replace('!', '_')}}",
     "template_language": ["jinja2", "chameleon", "mako"],
     "backend": ["none", "sqlalchemy", "zodb"],
-    "packaging system": ["poetry", "setuptools"],
+    "packaging": ["poetry", "setuptools"],
     "_copy_without_render": [
         "static/*"
     ]
